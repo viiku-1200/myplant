@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="farmer marketplace, organic plants India, PlantifyBharat, farmer community, certified farmers">
+    <meta name="description" content="PlantifyBharat connects urban gardeners with local farmers for fresh plants and seeds, with a community forum and certified farmer program.">
+    <title>PlantifyBharat - Your Farmer’s Gardening Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #2e7d32;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a5d6a7;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1491147334587-7d5f23cbfee2?q=80&w=2070&auto=format&fit=crop') no-repeat center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content button {
+            padding: 12px 24px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero-content button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Categories Section */
+        .categories {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .categories h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #2e7d32;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .category-card h3 {
+            padding: 15px;
+            font-size: 18px;
+            color: #2e7d32;
+        }
+
+        /* Featured Products */
+        .featured {
+            background-color: #e8f5e9;
+            padding: 40px 20px;
+        }
+
+        .featured h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #2e7d32;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #2e7d32;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product-card button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Seasonal Collections */
+        .seasonal {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .seasonal h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .seasonal p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .seasonal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .seasonal-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .seasonal-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .seasonal-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .seasonal-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #2e7d32;
+        }
+
+        .seasonal-card p {
+            font-size: 14px;
+            color: #555;
+            padding: 0 15px;
+        }
+
+        .seasonal-card button {
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .seasonal-card button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Plant Care Tips */
+        .care-tips {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .care-tips h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .care-intro {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .tips-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .tip-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .tip-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .tip-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        .tip-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Plant Finder Section */
+        .plant-finder {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+
+        .plant-finder h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .plant-finder p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .finder-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #2e7d32;
+        }
+
+        .form-group select, .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            color: #333;
+        }
+
+        .form-group select:focus, .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #4caf50;
+        }
+
+        .finder-form button {
+            padding: 12px 24px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .finder-form button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Blog Section */
+        .blog {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .blog p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card h3 {
+            font-size: 18px;
+            margin: 10px 15px;
+            color: #2e7d32;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            color: #555;
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+
+        .blog-card a {
+            display: inline-block;
+            margin: 0 15px 15px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .blog-card a:hover {
+            background-color: #388e3c;
+        }
+
+        /* Costly & Rare Plants Section */
+        .rare-plants {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #e8f5e9;
+        }
+
+        .rare-plants h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .rare-plants p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .rare-plants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .rare-plant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .rare-plant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .rare-plant-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .rare-plant-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #2e7d32;
+        }
+
+        .rare-plant-card p {
+            font-size: 14px;
+            color: #555;
+            padding: 0 15px;
+        }
+
+        .rare-plant-card .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin: 10px 0;
+        }
+
+        .rare-plant-card button {
+            margin: 15px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .rare-plant-card button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Farmer's Marketplace Section */
+        .farmers-market {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px 20px;
+        }
+
+        .farmers-market h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .farmers-market p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .sustainability-banner {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .marketplace-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .marketplace-buy, .marketplace-sell {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .marketplace-buy h3, .marketplace-sell h3 {
+            font-size: 22px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .buy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .buy-item {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .buy-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .buy-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .buy-item h4 {
+            font-size: 16px;
+            color: #2e7d32;
+            margin-bottom: 5px;
+            display: inline;
+        }
+
+        .buy-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .buy-item button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 2px;
+        }
+
+        .buy-item button:hover {
+            background-color: #388e3c;
+        }
+
+        .buy-item .social-share {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .buy-item .social-share a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .buy-item .social-share a:hover {
+            background-color: #a5d6a7;
+            color: white;
+        }
+
+        .certified-badge {
+            background-color: #388e3c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .bulk-buy-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .bulk-buy-button:hover {
+            background-color: #2e7d32;
+        }
+
+        .marketplace-sell form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .marketplace-sell .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .marketplace-sell button {
+            padding: 12px 24px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: center;
+        }
+
+        .marketplace-sell button:hover {
+            background-color: #388e3c;
+        }
+
+        .dashboard-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dashboard-link a {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .dashboard-link a:hover {
+            background-color: #388e3c;
+        }
+
+        .verification-note {
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .verification-note a {
+            color: #388e3c;
+            text-decoration: underline;
+        }
+
+        .verification-note a:hover {
+            color: #2e7d32;
+        }
+
+        .price-recommendation {
+            font-size: 14px;
+            color: #2e7d32;
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+        }
+
+        .farmer-stories {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+
+        .farmer-stories h3 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .farmer-stories .blog-link {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .farmer-stories .blog-link a {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .farmer-stories .blog-link a:hover {
+            background-color: #388e3c;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .story-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s, max-height 0.3s;
+            max-height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-card.expanded {
+            max-height: 500px;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .story-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .story-card h4 {
+            font-size: 16px;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+
+        .story-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .story-card .social-share {
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .story-card .social-share a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .story-card .social-share a:hover {
+            background-color: #a5d6a7;
+            color: white;
+        }
+
+        .expand-button {
+            display: none;
+            background: none;
+            border: none;
+            color: #4caf50;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+
+        .farmer-training {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+
+        .farmer-training h3 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .training-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .training-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .training-card h4 {
+            font-size: 16px;
+            color: #2e7d32;
+            margin: 10px 0;
+        }
+
+        .training-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .training-card .cta {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .training-card .cta:hover {
+            background-color: #388e3c;
+        }
+
+        /* Farmer Community Forum */
+        .farmer-forum {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+        }
+
+        .farmer-forum h3 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+
+        .forum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .forum-thread {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .forum-thread h4 {
+            font-size: 16px;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .forum-thread p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .forum-thread .cta {
+            display: inline-block;
+            padding: 8px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .forum-thread .social-share {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .forum-thread .social-share a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 5px 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .forum-thread .social-share a:hover {
+            background-color: #a5d6a7;
+            color: white;
+        }
+
+        .forum-form {
+            background-color: white;
+            padding unused: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .forum-form h4 {
+            font-size: 18px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .forum-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .forum-form .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .forum-form .form-group label {
+            font-size: 14px;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+
+        .forum-form .form-group input, .forum-form .form-group textarea {
+            padding: 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+        }
+
+        .forum-form button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            align-self: center;
+            transition: background-color 0.3s;
+        }
+
+        .forum-form button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Modal for Bulk Orders */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .modal-content h3 {
+            font-size: 20px;
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modal-content .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-content .form-group label {
+            font-size: 14px;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+
+        .modal-content .form-group input {
+            padding: 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+        }
+
+        .modal-content .cta {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-content .cta:hover {
+            background-color: #388e3c;
+        }
+
+        .modal-content .close-modal {
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 16px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #a5d6a7;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: #fff;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #a5d6a7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #a5d6;
+a7;
+            color: #2e7d32;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #2e7d32;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px;
+ rgba(0, 0,0, 0.1);
+            text-align: center;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 16px;
+            color: #2e7d32;
+        }
+
+        @media (max-width: 768px) {
+            .story-card {
+                max-height: 200px;
+            }
+
+            .story-card.expanded {
+                max-height: 600px;
+            }
+
+            .expand-button {
+                display: block;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero {
+                height: 300px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            }
+
+            .category-grid, .product-grid, .seasonal-grid, .tips-content, .blog-grid, .rare-plants-grid, .buy-grid, .story-grid, .training-grid, .forum-grid {
+                display: grid-template-columns: 1fr;
+            }
+
+            .finder-form, .marketplace-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-column {
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <h1 class="logo">PlantifyBharat</h1>
+            <nav>
+                <ul>
+                    <li><a href="#plants">Plants</a></li>
+                    <li><a href="#pots">Pots & Planters</a></li>
+                    <li><a href="#seeds">Seeds</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#decor">Decor</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#rare-plants">Rare Plants</a></li>
+                    <li><a href="#farmers-market">Farmer's Market</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for plants, pots...">
+ <button>Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to PlantifyBharat</h1>
+            <p>Connect with local farmers for plants, seeds, and sustainable gardening!</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Explore Our Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1512428813834-c177b07b67e2?q=80&w=2070&auto=format&fit=crop" alt="Indoor Plants">
+                <h3>Indo Plants</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1598962508295-c0d3d7b11b6b?q=80&w=2070&auto=format&fit=crop" alt="Outdoor Plants">
+                <h3>Outdoors Plants</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1586209136464-1812de2f8b6?q=80&w=2070&auto=format&fit=crop" alt="Pots & Planters">
+                <h3>Pots & Planters</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1587411768630-181ff8f9f216?q=80&w=2070&auto=format&fit=crop" alt="Seeds">
+                <h3>Seed</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4f4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Gardening Tools">
+                <h3>Gardening Tools</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614594975525-8cd2101d7f5f?q=80&w=2070&auto=format&fit=crop" alt="Peace Lily Plant">
+                <h3>Peace Lily</h3>
+                <p>₹599</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Ceramic Pot">
+                    <h3>Ceramic Pot</h3>
+                <p>₹300</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1587411768630-181ff8f9f216?q=80&w=2070&auto=format&fit=crop" alt="Flower Seeds">
+                <h3>Flower Seeds</h3>
+                <p>₹99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Gardening Kit">
+                <h3>Gardening Kit</h3>
+                <p>₹799</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Collections -->
+    <section class="seasonal">
+        <h2>Seasonal Collections</h2>
+        <p>Explore our curated collections for every season to keep your garden vibrant!</p>
+        <div class="seasonal-grid">
+            <div class="seasonal-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Monsoon Greens">
+                <h3>Monsoon Greens</h3>
+                <p>Water-loving plants and durable pots for the rainy season.</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="seasonal-card">
+                <img src="https://images.unsplash.com/photo-1512428813834-c177b07b67e2?q=80&w=2070&auto=format&fit=crop" alt="Winter Blooms">
+                <h3>Winter Blooms</h3>
+                <p>Colorful flowering plants for chilly months.</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="seasonal-card">
+                <img src="https://images.unsplash.com/photo-1598962508295-c0d3d7b11b6b?q=80&w=2070&auto=format&fit=crop" alt="Summer Succulents">
+                <h3>Summer Succulents</h3>
+                <p>Low-maintenance succulents for sunny days.</p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Care Tips -->
+    <section class="care-tips">
+        <h2>Plant Care Tips</h2>
+        <p class="care-intro">Learn to nurture your plants with our expert tips!</p>
+        <div class="tips-content">
+            <div class="tip-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Watering Can">
+                <h3>Watering</h3>
+                <p>Water based on plant needs. Succulents need less, while tropical plants thrive with regular watering.</p>
+            </div>
+            <div class="tip-card">
+                <img src="https://images.unsplash.com/photo-1512428813834-c177b07b67e2?q=80&w=2070&auto=format&fit=crop" alt="Indoor Plant">
+                <h3>Light</h3>
+                <p>Match light to plant type. Indoor plants prefer low light.</p>
+            </div>
+            <div class="tip-card">
+                <img src="https://images.unsplash.com/photo-1587411768630-181ff8f9f216?q=80&w=2070&auto=format&fit=crop" alt="Soil Bag">
+                <h3>Soil</h3>
+                <p>Use well-draining soil with organic compost.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Finder Section -->
+    <section class="plant-finder">
+        <h2>Find Your Perfect Plant</h2>
+        <p>Answer a few questions to discover plants that suit your space!</p>
+        <form class="finder-form">
+            <div class="form-group">
+                <label for="plant-type">Plant Type</label>
+                <select id="plant-type" name="plant-type">
+                    <option value="">Select Type</option>
+                    <option value="indoor">Indoor</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="flowering">Flowering</option>
+                    <option value="succulent">Succulent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="light">Light Conditions</label>
+                <select id="light" name="light">
+                    <option value="">Select Light</option>
+                    <option value="low">Low Light</option>
+                    <option value="medium">Medium Light</option>
+                    <option value="bright">Bright Light</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="maintenance">Maintenance Level</label>
+                <select id="maintenance" name="maintenance">
+                    <option value="">Select Maintenance</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <button type="submit">Find My Plant</button>
+        </form>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+        <h2>PlantifyBharat Blog</h2>
+        <p>Explore gardening tips, sustainable farming, and farmer stories!</p>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Monsoon Plant Care">
+                <h3>Top 5 Monsoon Plant Care Tips</h3>
+                <p>Protect your plants during the rainy season.</p>
+                <a href="#blog1">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="DIY Plant Decor">
+                <h3>DIY Plant Decor for Your Home</h3>
+                <p>Transform your space with creative plant ideas.</p>
+                <a href="#blog2">Read More</a>
+            </div>
+            <div class="blog-card">
+                <img src="https://images.unsplash.com/photo-1614594975525-8cd2101d7f5f?q=80&w=2070&auto=format&fit=crop" alt="Farmer Stories">
+                <h3>Stories from Our Farmers</h3>
+                <p>Discover inspiring stories of local farmers.</p>
+                <a href="farmer-stories-blog.html">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Costly & Rare Plants -->
+    <section class="rare-plants">
+        <h2>Costly & Rare Plants</h2>
+        <p>Explore our exclusive collection of premium plants!</p>
+        <div class="rare-plants-grid">
+            <div class="rare-plant-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Variegated Monstera">
+                <h3>Variegated Monstera</h3>
+                <p class="price">₹20000</p>
+                <p>Rare tropical plant with stunning leaves.</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="rare-plant-card">
+                <img src="https://images.unsplash.com/photo-1512428813834-c177b07b67e2?q=80&w=2070&auto=format&fit=crop" alt="Kadupul Flower">
+                <h3>Kadupul Flower</h3>
+                <p class="price">Priceless</p>
+                <p>Nocturnal blooming cactus flower.</p>
+                <button>Contact Us</button>
+            </div>
+            <div class="rare-plant-card">
+                <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Black Orchid">
+                <h3>Black Orchid</h3>
+                <p class="price">₹50000</p>
+                <p>Exotic orchid with deep hues.</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmer's Marketplace -->
+    <section class="farmers-market">
+        <h2>Farmer’s Marketplace</h2>
+        <p>Buy fresh plants and seeds from local farmers or sell your produce!</p>
+        <div class="sustainability-banner">
+            Support Local Farmers, Grow Sustainable
+        </div>
+        <div class="marketplace-content">
+            <div class="marketplace-buy">
+                <h3>Buy from Farmers</h3>
+                <div class="buy-grid">
+                    <div class="buy-item">
+                        <img src="https://images.unsplash.com/photo-1587411768630-181ff8f9f216?q=80&w=2070&auto=format&fit=crop" alt="Marigold Seeds">
+                        <h4>Marigold Seeds<span class="certified-badge">Certified Organic</span></h4>
+                        <p>₹50 - Grown in Maharashtra</p>
+                        <button>Add to Cart</button>
+                        <div class="social-share">
+                            <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/marigold-seeds#FarmToHome" class="insta-share" data-item="marigold-seeds">Share on Instagram</a>
+                        </div>
+                    </div>
+                    <div class="buy-item">
+                        <img src="https://images.unsplash.com/photo-1614594975525-8cd2101d7f5f?q=80&w=2070&auto=format&fit=crop" alt="Neem Sapling">
+                        <h4>Neem Sapling</h4>
+                        <p>₹150 - Sourced from Tamil Nadu</p>
+                        <button>Add to Cart</button>
+                        <div class="social-share">
+                            <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/neem-sapling#FarmToHome" class="insta-share" data-item="neem-sapling">Share on Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="bulk-buy-button">Contact for Bulk Orders</button>
+            </div>
+            <div class="marketplace-sell">
+                <h3>Sell as a Farmer</h3>
+                <div class="verification-note">
+                    Verified farmers only. <a href="#contact">Contact us</a> for approval.
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="farmer-name">Your Name</label>
+                        <input type="text" id="farmer-name" name="farmer-name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-type">Product Type</label>
+                        <select id="product-type" name="product-type" onchange="suggestPrice()">
+                            <option value="">Select Type</option>
+                            <option value="Marigold Seeds">Marigold Seeds</option>
+                            <option value="Neem Sapling">Neem Sapling</option>
+                            <option value="Tulsi Plant">Tulsi Plant</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-description">Product Description</label>
+                        <textarea id="product-description" name="product-description" rows="4" placeholder="Describe your product"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price (₹)</label>
+                        <input type="number" id="price" name="price" placeholder="Enter price">
+                        <div class="price-recommendation" id="price-suggestion"></div>
+                    </div>
+                    <button type="submit">Submit Listing</button>
+                </form>
+                <div class="dashboard-link">
+                    <a href="farmer-dashboard.html">Access Farmer Dashboard</a>
+                </div>
+            </div>
+        </div>
+        <div class="farmer-stories">
+            <h3>Meet Our Farmers</h3>
+            <div class="blog-link">
+                <a href="farmer-stories-blog.html">Read More Farmer Stories</a>
+            </div>
+            <div class="story-grid">
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1500585118853-d131f9c7f0e0?q=80&w=2070&auto=format&fit=crop" alt="Rajesh from Pune">
+                    <h4>Rajesh from Pune<span class="certified-badge">Certified Organic</span></h4>
+                    <p>Rajesh grows organic marigolds and tulsi sustainably.</p>
+                    <div class="social-share">
+                        <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/rajesh#FarmToHome" class="insta-share" data-item="rajesh-story">Share on Instagram</a>
+                    </div>
+                    <button class="expand-button">Expand</button>
+                </div>
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-f0119f7cbe7?q=80&w=2070&auto=format&fit=crop" alt="Lakshmi from Coimbatore">
+                    <h4>Lakshmi from Coimbatore</h4>
+                    <p>Lakshmi nurtures neem and mango saplings.</p>
+                    <div class="social-share">
+                        <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/lakshmi#FarmToHome" class="insta-share" data-item="lakshmi-story">Share on Instagram</a>
+                    </div>
+                    <button class="expand-button">Expand</button>
+                </div>
+            </div>
+        </div>
+        <div class="farmer-training">
+            <h3>Farmer Training Hub</h3>
+            <div class="training-grid">
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1597071118854-5c9a4db0a03b?q=80&w=2070&auto=format&fit=crop" alt="Organic Farming Tutorial">
+                    <h4>How to Grow Organic Tulsi</h4>
+                    <p>Learn sustainable farming techniques for tulsi.</p>
+                    <a href="#video1" class="cta">Watch Now</a>
+                </div>
+                <div class="training-card">
+                    <img src="https://images.unsplash.com/photo-1587411768630-181ff8f9f216?q=80&w=2070&auto=format&fit=crop" alt="Packaging Guide">
+                    <h4>Packaging Kits for Plants</h4>
+                    <p>Ensure plants arrive safely to customers.</p>
+                    <a href="#guide1" class="cta">Click Here</a>
+                </div>
+            </div>
+        </div>
+        <div class="farmer-forum">
+            <h3>Farmer Community Forum</h3>
+            <div class="forum-grid">
+                <div class="forum-thread">
+                    <h4>Best Organic Pest Control?</h4>
+                    <p>Rajesh: Anyone tried neem oil for aphids? Results?</p>
+                    <a href="#thread1" class="cta">Read More</a>
+                    <div class="social-share">
+                        <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/forum/pest-control#FarmToHome" class="insta-share" data-item="pest-control-thread">Share on Instagram</a>
+                    </div>
+                </div>
+                <div class="forum-thread">
+                    <h4>Organic Certification Process</h4>
+                    <p>Lakshmi: What’s the fastest way to get certified?</p>
+                    <a href="#thread2" class="cta">Read More</a>
+                    <div class="social-share">
+                        <a href="https://www.instagram.com/?url=https://plantifybharat.com/farmers-market/forum/certification#FarmToHome" class="insta-share" data-item="certification-thread">Share on Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="forum-form">
+                <h4>Start a Discussion</h4>
+                <div class="verification-note">
+                    Verified farmers only. <a href="#contact">Contact us</a> for approval.
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="forum-title">Topic Title</label>
+                        <input type="text" id="forum-title" name="forum-title" placeholder="Enter topic title">
+                    </div>
+                    <div class="form-group">
+                        <label for="forum-content">Your Question/Comment</label>
+                        <textarea id="forum-content" name="forum-content" rows="4" placeholder="Share your thoughts"></textarea>
+                    </div>
+                    <button type="submit" class="cta">Post Topic</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"The plants arrived perfectly, and the pots are stylish!"</p>
+                <h4>- Priya S.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"I love the variety of seeds and tools available!"</p>
+                <h4>- Rohan K.</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The care tips are a game-changer for my garden!"</p>
+                <h4>- Anjali M.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About PlantifyBharat</h3>
+                <p>Your one-stop shop for connecting with local farmers.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#plants">Plants</a></li>
+                    <li><a href="#pots">Pots & Planters</a></li>
+                    <li><a href="#seeds">Seeds</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#decor">Decor</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#rare-plants">Rare Plants</a></li>
+                    <li><a href="#farmers-market">Farmer’s Market</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Email: support@plantifybharat.com</p>
+                <p>Phone: +91 123-456-7890</p>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Bulk Orders -->
+    <div class="modal" id="bulk-order-modal">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <h3>Bulk Order Request</h3>
+            <form>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" placeholder="Enter quantity">
+                </div>
+                <div class="form-group">
+                    <label for="payment-amount">Advance Payment (50%)</label>
+                    <input type="number" id="payment-amount" name="payment-amount" placeholder="Enter amount">
+                </div>
+                <button type="submit" class="cta">Submit Request</button>
+                <p>Read our <a href="#refund">Refund Policy</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Analytics for Instagram share
+        document.querySelectorAll('.insta-share').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.getAttribute('data-item');
+                console.log(`Instagram share clicked for: ${item}`);
+            });
+        });
+
+        // Price Recommendation Tool
+        const priceGuide = {
+            "Marigold Seeds": { min: 45, max: 60, region: "Maharashtra" },
+            "Neem Sapling": { min: 120, max: 180, region: "Tamil Nadu" },
+            "Tulsi Plant": { min: 100, max: 150, region: "Karnataka" }
+        };
+
+        function suggestPrice() {
+            const productType = document.getElementById('product-type').value;
+            const suggestionDiv = document.getElementById('price-suggestion');
+            if (priceGuide[productType]) {
+                suggestionDiv.textContent = `Recommended price: ₹${priceGuide[productType].min} - ₹${priceGuide[productType].max} (based on ${priceGuide[productType].region} market rates)`;
+            } else {
+                suggestionDiv.textContent = '';
+            }
+        }
+
+        // Tap-to-expand for story cards
+        document.querySelectorAll('.expand-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.parentElement;
+                card.classList.toggle('expanded');
+                button.textContent = card.classList.contains('expanded') ? 'Collapse' : 'Expand';
+            });
+        });
+
+        // Modal Functionality
+        document.querySelector('.bulk-buy-button').addEventListener('click', () => {
+            document.getElementById('bulk-order-modal').style.display = 'flex';
+        });
+
+        document.querySelector('.close-modal').addEventListener('click', () => {
+            document.getElementById('bulk-order-modal').style.display = 'none';
+        });
+
+        window.onclick = e => {
+            if (e.target.id === 'bulk-order-modal') {
+                document.getElementById('bulk-order-modal').style.display = 'none';
+            }
+        };
+
+        // Forum Form Submission
+        document.querySelector('.forum-form form').addEventListener('submit', e => {
+            e.preventDefault();
+            const title = document.getElementById('forum-title').value;
+            console.log(`Forum topic posted: ${title}`);
+            e.target.reset();
+        });
+
+        // Analytics for footer links
+        document.querySelectorAll('.footer-column a').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log(`Footer link clicked: ${link.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>
